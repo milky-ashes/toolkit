@@ -89,10 +89,8 @@
   top: 50%;
   left: 50%;
   text-indent: -9999em;
-  border-top: 3px solid rgba(90, 90, 90, 0.2);
-  border-right: 3px solid rgba(90, 90, 90, 0.2);
-  border-bottom: 3px solid rgba(90, 90, 90, 0.2);
-  border-left: 3px solid #74b5eb;
+  border: 3px solid rgba(90, 90, 90, 0.2);
+  border-left-color: #74b5eb;
   margin: -15px 0 0 -15px;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
