@@ -1,10 +1,10 @@
 <extends:element/>
 
 <block:assets>
-    <asset:script href="resources/scripts/spiral/bundle.js"/>
+    <asset:script href="resources/scripts/spiral/sf.min.js"/>
 </block:assets>
 
-<block:form-class>${class} <?= (${ajax | true} ? 'js-spiral-form' : '') #compiled ?></block:form-class>
+<block:form-class>${class} <?= (${ajax | true} ? 'js-sf-form' : '') #compiled ?></block:form-class>
 <!--
 .form-content was added for blur effects
 We can't set blur on form itself, because it will blur lockers(loaders) too.
