@@ -819,10 +819,7 @@
          */
         add: function (type, context) {
             if (!this.types.hasOwnProperty(type)) return false;
-            var node = document.createElement("div");
-            node.className = "spiral-lock " + this.types[type].class;
-            node.innerHTML = this.types[type].html;
-            context.appendChild(node);
+            context.insertAdjacentHTML('beforeend', this.types[type].html);
             context.classList.add("locked");
             return this.types[type].progress;
         },
@@ -834,8 +831,8 @@
         remove: function (type, context) {
             if (!this.types.hasOwnProperty(type)) return false;
             context.classList.remove("locked");
-            var spiralLock = context.querySelector(".spiral-lock");
-            if (spiralLock) context.removeChild(spiralLock);
+            var lock = context.querySelector(".js-sf-lock");
+            if (lock) context.removeChild(lock);
             return true;
         },
         /**
@@ -847,19 +844,8 @@
              * default lock type. <b>className:</b>spiral-lock-default
              * @type {Object}
              */
-            "default": {
-                /**
-                 * class name
-                 * @inner
-                 * @type String
-                 */
-                class: "spiral-lock-default",
-                /**
-                 * HTML
-                 * @inner
-                 * @type String
-                 */
-                html: ''
+            default: {
+                html: '<div class="js-sf-lock spiner"></div>'
                 /**
                  * Optional is to pass a function that will process progress. Below is example for bootstrap
                  * @param current
@@ -874,6 +860,9 @@
              * }
                  */
 
+            },
+            progress: {
+                html: '<div class="js-sf-lock progress"><div class="progress-line"></div></div>'
             }
         }
     };
